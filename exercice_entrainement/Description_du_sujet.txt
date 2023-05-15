@@ -1,0 +1,55 @@
+Description du sujet
+Dans cet exercice, vous allez entraîner un perceptron multi-couche sur ce  dataset réaliste, pour répondre à une des deux tâches suivantes :
+Une tâche de régression avec ce dataset visant à prédire la consommation électrique (la variable PE) d'une centrale électrique
+Vous tenterez de minimiser la root mean squared error en tant que métrique d'évaluation pour cette tâche
+
+Conseils d'analyses
+Voici quelques questions qui peuvent vous guider dans éléments importants à inclure dans votre notebook:
+
+Quelles architecture avez vous testé pour votre perceptron (nombre de couches, nombre de neurones par couches) ?
+Quels fonction de coût avez vous testé ? Quels ont été leur impact ?
+
+Avez vous réussi à savoir dans quelle situation d'apprentissage vous vous trouvez ? (sous apprentissage, compromis satisfaisant, sur apprentissage)
+
+Quelles procédures avez vous employées pour pallier aux potentielles situations d'apprentissage non optimal ?
+
+Quelques conseils
+
+Dans votre chaîne de traitement, vous aurez un léger travail de pré-traitement des données avant l'entraînement de votre modèle .
+La qualité de ce pré-traitement peu impacter vos résultats, en particulier avec certaines loss fonctions.
+
+
+   les etapes à suivre 
+
+    Préparation des données :
+        Collectez les données de votre centrale électrique, telles que la température, la pression, l'humidité, etc., ainsi que la variable cible, la consommation d'énergie.
+        Nettoyez les données en supprimant les valeurs manquantes ou en les remplaçant par des valeurs appropriées.
+        Normalisez les caractéristiques numériques pour les ramener à une échelle commune.
+        Divisez les données en ensembles d'entraînement, de validation et de test. Par exemple, vous pouvez utiliser 70% des données pour l'entraînement, 15% pour la validation et 15% pour les tests.
+
+    Architecture du MLP :
+        Déterminez l'architecture de votre MLP, y compris le nombre de couches cachées et le nombre de neurones dans chaque couche.
+        Choisissez les fonctions d'activation appropriées pour chaque couche, comme ReLU (Rectified Linear Unit) pour les couches cachées et une fonction d'activation linéaire pour la couche de sortie.
+
+    Initialisation des poids :
+        Initialisez les poids du MLP de manière aléatoire ou en utilisant des méthodes d'initialisation spécifiques, telles que l'initialisation de Xavier ou l'initialisation de He.
+
+    Forward propagation :
+        Effectuez une propagation avant (forward propagation) à travers le MLP pour obtenir les sorties prédites pour un lot (batch) de données d'entrée.
+        Calculez les sorties de chaque couche en multipliant les entrées par les poids et en appliquant la fonction d'activation correspondante.
+
+    Calcul de la fonction de perte :
+        Comparez les sorties prédites du MLP avec les valeurs réelles de la consommation d'énergie à l'aide d'une fonction de perte appropriée, telle que l'erreur quadratique moyenne (mean squared error).
+
+    Rétropropagation (Backpropagation) :
+        Utilisez la rétropropagation de l'erreur pour calculer les gradients de perte par rapport aux poids du MLP.
+        Propagez les gradients d'erreur de la couche de sortie vers les couches précédentes en utilisant la chaîne de règle de dérivation.
+
+    Mise à jour des poids :
+        Mettez à jour les poids du MLP en utilisant un algorithme d'optimisation, tel que la descente de gradient stochastique (SGD) ou l'optimisation d'Adam.
+        Ajustez les poids en fonction des gradients calculés lors de l'étape de rétropropagation.
+
+    Répétition des étapes 4 à 7 :
+        Répétez les étapes de propagation avant, de calcul de la fonction de perte, de rétropropagation et de mise à jour des poids pour chaque lot de données d'entraînement jusqu'à ce que vous ayez parcouru l'ensemble des données d'entraînement plusieurs fois (plusieurs époques).
+
+    Validation et réglage des hyper
